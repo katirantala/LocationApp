@@ -16,11 +16,11 @@ export function useLocations() {
             setLocations(locationsList);
         });
 
-        // Puhdistetaan tilaus, kun komponentti irrotetaan
+        
         return () => unsubscribe();
     }, []);
 
     return locations;
 }
 
-// export default useLocations; // Tämä rivi voidaan pitää kommentoituna, jos käytetään nimettyä vientiä
+
