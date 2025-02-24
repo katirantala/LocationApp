@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
-        backgroundColor: '#fff',
+        backgroundColor: '#E6E6FA',
     },
     itemContainer: {
         marginBottom: 16,
@@ -12,11 +12,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 8,
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#FFFFFF',
     },
+    form: {
+        backgroundColor: '#FFFFFF'
+
+    }, 
     itemName: {
         fontSize: 18,
         fontWeight: 'bold',
+        backgroundColor: '#FFFFFF'
     },
     itemDescription: {
         fontSize: 14,
@@ -31,6 +36,19 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 20,
     },
+    button: {
+        backgroundColor: '#87CEFA',
+        padding: 10,
+        borderRadius: 10,
+        alignItems: 'center',
+        marginBottom: 10, 
+    },
+    buttonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: 'bold',
+    }
+    
 });
 
 export default styles;
