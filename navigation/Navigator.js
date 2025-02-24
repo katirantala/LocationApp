@@ -28,7 +28,7 @@ const Navigator = () => {
                 }}
             />
             <Tab.Screen
-                name="Add location" 
+                name="AddLocation" 
                 component={AddLocationScreen}
                 options={{
                     tabBarIcon: () => <AntDesign name={icons[ADD]} size={24} />
