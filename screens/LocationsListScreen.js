@@ -1,22 +1,26 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { useLocations } from '../firebase/FirestoreController.js'; 
+import { View, Text, FlatList, Button } from 'react-native';
+import { useLocations } from '../firebase/FirestoreController';
 import styles from '../styles/Styles.js';
 
-const LocationsListScreen = () => {
-    const locations = useLocations(); 
+function LocationsListScreen({ navigation }) {
+    const locations = useLocations();
 
-    const renderItem = ({ item }) => (
-        <View style={styles.itemContainer}>
-            <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemDescription}>{item.description}</Text>
-            <Text style={styles.itemRating}>Rating: {item.rating}</Text>
-        </View>
-    );
+    function renderItem({ item }) {
+        return (
+            <View style={styles.itemContainer}>
+                <Text style={styles.itemName}>{item.name}</Text>
+                <Text style={styles.itemDescription}>{item.description}</Text>
+                <Text style={styles.itemRating}>Rating: {item.rating}</Text>
+            </View>
+        );
+    }
 
     return (
         <View style={styles.container}>
-            {locations.length === 0 ? ( // Näytetään viesti, jos lista on tyhjä
+            <Button title="Add Location" onPress={() => navigation.navigate('AddLocation')} />
+            
+            {locations.length === 0 ? (
                 <Text style={styles.emptyMessage}>No locations found.</Text>
             ) : (
                 <FlatList
@@ -27,6 +31,6 @@ const LocationsListScreen = () => {
             )}
         </View>
     );
-};
+}
 
 export default LocationsListScreen;

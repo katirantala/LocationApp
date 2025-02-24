@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, addDoc } from 'firebase/firestore';
 import { db } from './Config.js';
 
 export function useLocations() {
@@ -13,6 +13,7 @@ export function useLocations() {
                 id: doc.id,
                 ...doc.data()
             }));
+            console.log("Fetched locations:", locationsList); //Poista kun valmis
             setLocations(locationsList);
         });
 
@@ -24,3 +25,16 @@ export function useLocations() {
 }
 
 
+export async function addLocation(name, description, rating) {
+    try {
+        await addDoc(collection(db, 'locations'), {
+            name: name,  
+            description: description,  
+            rating: parseFloat(rating), // Muutetaan rating numeroksi
+            createdAt: new Date()
+        });
+        console.log("Location added successfully!");
+    } catch (error) {
+        console.error("Error adding location:", error);
+    }
+}
