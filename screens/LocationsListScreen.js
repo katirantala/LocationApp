@@ -26,10 +26,10 @@ const LocationsListScreen = ({ navigation }) => {
                 style={styles.LocationListButton} 
                 onPress={() => navigation.navigate('AddLocation')} 
             >
-                <Text style={styles.buttonText}>Add Location</Text> 
+                <Text style={styles.buttonText}>Add location</Text> 
             </TouchableOpacity>
             {locations.length === 0 ? (
-                <Text style={styles.emptyMessage}>No locations found.</Text>
+                <Text style={styles.emptyMessage}>No locations found. Add a new location. </Text>
             ) : (
                 <FlatList
                     data={locations}
