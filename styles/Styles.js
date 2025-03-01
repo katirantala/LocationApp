@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     itemContainer: {
         marginBottom: 16,
         padding: 16,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#ccc',
         borderRadius: 8,
         backgroundColor: '#FFFFFF',
@@ -24,18 +24,17 @@ const styles = StyleSheet.create({
 
     itemName: {
         fontSize: 18,
-        fontWeight: 'bold',
-        backgroundColor: '#FFFFFF'
+        fontWeight: 'bold'
     },
 
     itemDescription: {
         fontSize: 14,
-        marginVertical: 4,
+        marginTop: 10
     },
 
     itemRating: {
         fontSize: 14,
-        color: 'gray',
+        marginTop: 5
     },
 
     emptyMessage: {
