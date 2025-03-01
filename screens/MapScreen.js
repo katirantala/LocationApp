@@ -50,7 +50,7 @@ const MapScreen = ({ route }) => {
           <Marker title={locationName || 'Nykyinen sijainti'} coordinate={{ latitude: loc.lat, longitude: loc.lon }} />
         </MapView>
       ) : (
-        <Text>Ladataan karttaa...</Text>
+        <Text>Loading map...</Text>
       )}
     </SafeAreaView>
   );
