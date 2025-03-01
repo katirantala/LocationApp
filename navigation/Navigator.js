@@ -32,6 +32,11 @@ const LocationsStack = () => {
                 component={MapScreen} 
                 options={{ title: "Map View" }}
             />
+            <Stack.Screen 
+                name="AddLocation" // ✅ Lisätään tämä Stackiin
+                component={AddLocationScreen} 
+                options={{ title: "Add Location" }}
+            />
         </Stack.Navigator>
     );
 };
@@ -48,7 +53,7 @@ const Navigator = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Add location" 
+                    name="Add Location" 
                     component={AddLocationScreen}
                     options={{
                         tabBarIcon: () => <AntDesign name={icons[ADD]} size={24} />
