@@ -27,20 +27,33 @@ function AddLocationScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-        <View style={styles.form}>
-            <Text style={styles.label}>Name:</Text>
-            <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="Enter location name" />
+            <View style={styles.form}>
+                <Text style={styles.label}>Name:</Text>
+                <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="Enter location name" />
 
-            <Text style={styles.label}>Description:</Text>
-            <TextInput style={styles.input} value={description} onChangeText={setDescription} placeholder="Enter description" />
+                <Text style={styles.label}>Description:</Text>
+                <TextInput style={styles.input} value={description} onChangeText={setDescription} placeholder="Enter description" />
 
-            <Text style={styles.label}>Rating (1-5):</Text>
-            <TextInput style={styles.input} value={rating} onChangeText={setRating} placeholder="Enter rating" keyboardType="numeric" />
+                <Text style={styles.label}>Rating (1-5):</Text>
+                <TextInput
+                    style={styles.input}
+                    value={rating}
+                    onChangeText={(text) => {
+                        const num = parseInt(text, 10);
+                        if (!isNaN(num) && num >= 1 && num <= 5) {
+                            setRating(text);
+                        } else if (text === '') {
+                            setRating('');
+                        }
+                    }}
+                    placeholder="Enter rating"
+                    keyboardType="numeric"
+                />
 
-            <TouchableOpacity style={styles.button} onPress={handleAddLocation}>
-                <Text style={styles.buttonText}>Add Location</Text>
-            </TouchableOpacity>
-        </View>
+                <TouchableOpacity style={styles.button} onPress={handleAddLocation}>
+                    <Text style={styles.buttonText}>Add Location</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
