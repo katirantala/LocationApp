@@ -19,8 +19,6 @@ const icons = {
     [ADD]: "plus",  
     [MAP]: "enviroment",    
 };
-
-// 🔹 Stack-navigaattori, jotta karttanäkymään voi siirtyä myös sijaintilistasta
 const LocationsStack = () => {
     return (
         <Stack.Navigator>
@@ -41,17 +39,16 @@ const LocationsStack = () => {
 const Navigator = () => {
     return (
             <Tab.Navigator>
-                {/* 🔹 Sijaintilista käyttää Stack-navigaattoria */}
                 <Tab.Screen 
                     name="Locations" 
                     component={LocationsStack} 
                     options={{
-                        headerShown: false, // Piilottaa ylimääräisen otsikon
+                        headerShown: false,
                         tabBarIcon: () => <AntDesign name={icons[LIST]} size={24} />
                     }}
                 />
                 <Tab.Screen
-                    name="AddLocation" 
+                    name="Add location" 
                     component={AddLocationScreen}
                     options={{
                         tabBarIcon: () => <AntDesign name={icons[ADD]} size={24} />

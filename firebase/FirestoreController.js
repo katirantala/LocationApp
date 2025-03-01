@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { collection, query, orderBy, onSnapshot, addDoc } from 'firebase/firestore';
 import { db } from './Config';
 
-// 🔹 Haetaan Firestoresta kaikki sijainnit
 export function useLocations() {
   const [locations, setLocations] = useState([]);
 
@@ -22,8 +21,6 @@ export function useLocations() {
 
   return locations;
 }
-
-// 🔹 Tallennetaan uusi sijainti Firestoreen
 export async function addLocation(name, description, rating) {
   try {
     await addDoc(collection(db, 'locations'), {
@@ -32,8 +29,7 @@ export async function addLocation(name, description, rating) {
       rating: parseFloat(rating),
       createdAt: new Date()
     });
-    console.log("Sijainti lisätty onnistuneesti!");
   } catch (error) {
-    console.error("Virhe lisättäessä sijaintia:", error);
+    console.error("Error adding location:", error);
   }
 }
