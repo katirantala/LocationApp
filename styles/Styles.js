@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         padding: 16,
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     itemRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between', // Jakaa tilan nimen ja ikonin välillä
+        justifyContent: 'space-between', 
        
 
     },
