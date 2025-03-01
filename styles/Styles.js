@@ -47,8 +47,18 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 16,
         fontWeight: 'bold',
+    },
+
+    itemRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between', // Jakaa tilan nimen ja ikonin välillä
+       
+
+    },
+    mapIcon: {
+        color: 'gray'
     }
-    
 });
 
 export default styles;
