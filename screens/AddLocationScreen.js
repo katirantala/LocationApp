@@ -50,7 +50,7 @@ function AddLocationScreen({ navigation }) {
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleAddLocation}>
-                    <Text style={styles.buttonText}>Add Location</Text>
+                    <Text style={styles.buttonText}>Add location</Text>
                 </TouchableOpacity>
             </View>
         </View>
