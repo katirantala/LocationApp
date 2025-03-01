@@ -26,7 +26,7 @@ function AddLocationScreen({ navigation }) {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
         <View style={styles.form}>
             <Text style={styles.label}>Name:</Text>
             <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="Enter location name" />
@@ -41,7 +41,7 @@ function AddLocationScreen({ navigation }) {
                 <Text style={styles.buttonText}>Add Location</Text>
             </TouchableOpacity>
         </View>
-        </SafeAreaView>
+        </View>
     );
 }
 

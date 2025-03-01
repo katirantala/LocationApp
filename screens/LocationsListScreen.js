@@ -23,7 +23,7 @@ const LocationsListScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity 
-                style={styles.button} 
+                style={styles.LocationListButton} 
                 onPress={() => navigation.navigate('AddLocation')} 
             >
                 <Text style={styles.buttonText}>Add Location</Text> 

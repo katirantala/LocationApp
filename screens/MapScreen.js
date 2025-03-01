@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Alert, StyleSheet, Text } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import styles from '../styles/Styles.js';
 import * as Location from 'expo-location';
 import MapView, { Marker } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -36,7 +37,7 @@ const MapScreen = ({ route }) => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.mapContainer}>
       {loc ? (
         <MapView
           style={styles.map}
@@ -52,19 +53,10 @@ const MapScreen = ({ route }) => {
       ) : (
         <Text>Loading map...</Text>
       )}
-    </SafeAreaView>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  map: {
-    width: '100%',
-    height: '100%',
-  },
-});
+
 
 export default MapScreen;
