@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { addLocation } from '../firebase/FirestoreController';
 import styles from '../styles/Styles.js';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 function AddLocationScreen({ navigation }) {
     const [name, setName] = useState('');
